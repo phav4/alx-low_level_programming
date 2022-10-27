@@ -1,10 +1,10 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
  * _strncpy - function that copies a string.
  *
  * @dest: pointer to destination char
- * @sec: pointer to source char
+ * @src: pointer to source char
  * @n: number of bytes
  * Return: char
  */
