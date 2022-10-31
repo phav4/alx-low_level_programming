@@ -1,18 +1,27 @@
-#include "main.h"
+#include "holberton.h"
+
 
 /**
- * print_chessboard - Entry point
- * @a: array
- * Return: Always 0 (Success)
+ * print_chessboard - function that prints a chessboard
+ * @a: size of 2D array
+ * Return: none
  */
+
 void print_chessboard(char (*a)[8])
 {
-	int i, n;
+	int i = 0;
+	int j;
 
-	for (i = 0; i < 8; i++)
+	while (i < 8)
 	{
-		for (n = 0; n < 8; n++)
-			_putchar(a[i][n]);
-		_putchar('\n');
+		j = 0;
+		while (j < 8)
+		{
+			_putchar(a[i][j]);
+			if (j == 7)
+				_putchar('\n');
+			j++;
+		}
+		i++;
 	}
 }
