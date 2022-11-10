@@ -9,41 +9,39 @@
  * @n: s2's number of bytes
  * Return: 0
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *arr;
-	unsigned int i, j, co, co_2;
+	unsigned int l1, l2, i, j;
+	char *s;
+	char *nul = "";
 
 	if (s1 == NULL)
-		s1 = "";
+		s1 = nul;
 	if (s2 == NULL)
-		s2 = "";
+		s2 = nul;
 
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-	}
+	l1 = 0, l2 = 0;
+	while (*(s1 + l1))
+		l1++;
+	while (*(s2 + l2))
+		l2++;
 
-	for (j = 0; s2[j] != '\0'; j++)
-	{
-	}
+	if (n < l2)
+		l2 = n;
 
-	if (n < j)
-		j = n;
+	s = malloc(sizeof(char) * (l1 + l2 + 1));
 
-	j += i;
-	arr = malloc(sizeof(char *) * (j + 1));
+	if (s == 0)
+		return (0);
 
-	if (arr == NULL)
-		return (NULL);
+	for (i = 0; i < l1; i++)
+		*(s + i) = *(s1 + i);
 
-	for (co = 0; co < i; co++)
-		arr[co] = s1[co];
-	for (co_2 = 0; co < j; co_2++)
-	{
-		arr[co] = s2[co_2];
-		co++;
-	}
-	co++;
-	arr[co] = '\0';
-	return (arr);
+	for (i = 0, j = l1; i < l2; j++, i++)
+		*(s + j) = *(s2 + i);
+
+	*(s + j) = '\0';
+
+	return (s);
 }
