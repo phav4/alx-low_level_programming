@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include "dog.h"
 /**
- * print_dog - Write a function that prints a struct dog
- * @d: struct name
- * Return: 0
+ * print_dog - prints a struct dog
+ * @d: Pointer to struct
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 void print_dog(struct dog *d)
 {
