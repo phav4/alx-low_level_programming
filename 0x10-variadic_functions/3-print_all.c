@@ -1,50 +1,42 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "variadic_functions.h"
-
+#include <stdarg.h>
+#include <stdio.h>
 /**
- * print_i - prints int
- * @list: arguement of list
- * @s: seperator
- * Return: none
+ * tchar - prints variadic argument char
+ * @list: variadic list
+ *
+ * Return: No return
  */
-
 void tchar(va_list list)
 {
 	printf("%c", va_arg(list, int));
 }
-
 /**
  * tint - prints variadic argument int
  * @list: variadic list
  *
  * Return: No return
  */
-
 void tint(va_list list)
 {
 		printf("%i", va_arg(list, int));
 }
-
 /**
  * tfloat - prints variadic argument float
  * @list: variadic list
  *
  * Return: No return
  */
-
 void tfloat(va_list list)
 {
 		printf("%f", va_arg(list, double));
 }
-
 /**
  * tstring - prints variadic argument string
  * @list: variadic list
  *
  * Return: No return
  */
-
 void tstring(va_list list)
 {
 	char *tmp;
@@ -54,7 +46,6 @@ void tstring(va_list list)
 		tmp = "(nil)";
 	printf("%s", tmp);
 }
-
 /**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
@@ -62,7 +53,6 @@ void tstring(va_list list)
  *
  * Return: No return
  */
-
 void print_all(const char * const format, ...)
 {
 	ftype fa[] = {
